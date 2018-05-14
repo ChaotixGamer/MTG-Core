@@ -1,4 +1,4 @@
-package Core;
+package MTGCore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ public class CardDataManager
     // Set Code is used for map
     private HashMap<String, CardSet> setMap;
 
-    // Core.Card name is used for map
+    // MTGCore.Card name is used for map
     private HashMap<String, CardInformation> cardInformationMap;
 
     // SetCode_CardName is used for map
@@ -68,7 +68,7 @@ public class CardDataManager
             {
                 return true;
             }
-            // Core.Card type does exist but IDs do not match. Return false
+            // MTGCore.Card type does exist but IDs do not match. Return false
             else
             {
                 return false;
@@ -94,14 +94,14 @@ public class CardDataManager
             {
                 return true;
             }
-            // Core.Card type does exist but IDs do not match. Return false
+            // MTGCore.Card type does exist but IDs do not match. Return false
             else
             {
                 return false;
             }
         }
 
-        // Core.Card type does not exist
+        // MTGCore.Card type does not exist
         return false;
     }
 
@@ -121,14 +121,14 @@ public class CardDataManager
             {
                 return true;
             }
-            // Core.Card type does exist but IDs do not match. Return false
+            // MTGCore.Card type does exist but IDs do not match. Return false
             else
             {
                 return false;
             }
         }
 
-        // Core.Card type does not exist
+        // MTGCore.Card type does not exist
         return false;
     }
 
@@ -148,14 +148,14 @@ public class CardDataManager
             {
                 return true;
             }
-            // Core.Card type does exist but IDs do not match. Return false
+            // MTGCore.Card type does exist but IDs do not match. Return false
             else
             {
                 return false;
             }
         }
 
-        // Core.Card type does not exist
+        // MTGCore.Card type does not exist
         return false;
     }
 
@@ -175,14 +175,14 @@ public class CardDataManager
             {
                 return true;
             }
-            // Core.Card type does exist but IDs do not match. Return false
+            // MTGCore.Card type does exist but IDs do not match. Return false
             else
             {
                 return false;
             }
         }
 
-        // Core.Card type does not exist
+        // MTGCore.Card type does not exist
         return false;
     }
 

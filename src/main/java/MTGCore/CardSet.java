@@ -1,4 +1,4 @@
-package Core;
+package MTGCore;
 
 import java.util.ArrayList;
 

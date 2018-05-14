@@ -1,4 +1,4 @@
-package Core;
+package MTGCore;
 
 /**
  * Created by rayna on 11/24/2016.
