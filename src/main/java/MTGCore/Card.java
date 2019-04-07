@@ -9,7 +9,9 @@ public class Card
     public boolean isTimeShifted;
     public boolean isStarter;
 
-    public String borderType;
+    public String borderColor;
+    public String frameVersion;
+    public String layout;
     public String artistName;
     public String cardRarity;
     public String flavourText;
@@ -24,7 +26,9 @@ public class Card
         isTimeShifted = false;
         isStarter = false;
 
-        borderType = "black";
+        borderColor = "black";
+        frameVersion = "2015";
+        layout = "";
         cardRarity = "";
         artistName = "";
         flavourText = "";
@@ -52,14 +56,24 @@ public class Card
         if(this.isStarter == false && newCard.isStarter == true)
             newer++;
 
-        if(borderType.equals("black") && !borderType.equals("black"))
-            newer++;;
+        if(borderColor.equals("black") && !newCard.borderColor.equals("black"))
+        newer++;
+
+        if(frameVersion.equals("2015") && !newCard.frameVersion.equals("2015"))
+            newer++;
 
         if(this.cardNumber.equals("") && !newCard.cardNumber.equals(""))
             newer++;
         else if(!this.cardNumber.equals("") && newCard.cardNumber.equals(""))
             older++;
         else if(!this.cardNumber.equals(newCard.cardNumber))
+            return Constants.STATUS.MISMATCH;
+
+        if(this.layout.equals("") && !newCard.layout.equals(""))
+            newer++;
+        else if(!this.layout.equals("") && newCard.layout.equals(""))
+            older++;
+        else if(!this.layout.equals(newCard.layout))
             return Constants.STATUS.MISMATCH;
 
         if(this.cardRarity.equals("") && !newCard.cardRarity.equals(""))
@@ -116,8 +130,8 @@ public class Card
         if(this.isStarter != otherCard.isStarter)
             this.isStarter = otherCard.isStarter;
 
-        if(!this.borderType.equals(otherCard.borderType))
-            this.borderType = otherCard.borderType;
+        if(!this.borderColor.equals(otherCard.borderColor))
+            this.borderColor = otherCard.borderColor;
 
         if(this.cardRarity.equals(""))
             this.cardRarity = otherCard.cardRarity;
