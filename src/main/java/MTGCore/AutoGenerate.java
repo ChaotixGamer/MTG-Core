@@ -14,6 +14,8 @@ public class AutoGenerate
     private static HashMap<String, Integer> colorCombinationsCoded = null;
     private static HashMap<String, Integer> rarities = null;
     private static HashMap<String, Integer> borderTypes = null;
+    private static HashMap<String, Integer> frameTypes = null;
+    private static HashMap<String, Integer> layoutTypes = null;
     private static HashMap<String, Integer> setTypes = null;
 
     public static HashMap<String, Integer> GenerateColourCombinationCodedMap()
@@ -133,6 +135,44 @@ public class AutoGenerate
         }
 
         return borderTypes;
+    }
+
+    public static HashMap<String, Integer> GenerateFrameTypes() {
+        if(frameTypes == null || frameTypes.size() < Constants.NUM_FRAMES)
+        {
+            frameTypes = new HashMap<>();
+
+            frameTypes.put("1993", 1);
+            frameTypes.put("1997", 2);
+            frameTypes.put("2003", 3);
+            frameTypes.put("2015", 4);
+            frameTypes.put("future", 5);
+        }
+
+        return frameTypes;
+    }
+
+    public static HashMap<String, Integer> GenerateLayouts() {
+        if(layoutTypes == null || layoutTypes.size() < Constants.NUM_LAYOUTS)
+        {
+            layoutTypes = new HashMap<>();
+
+            layoutTypes.put("normal", 1);
+            layoutTypes.put("meld", 2);
+            layoutTypes.put("scheme", 3);
+            layoutTypes.put("planar", 4);
+            layoutTypes.put("augment", 5);
+            layoutTypes.put("transform", 6);
+            layoutTypes.put("split", 7);
+            layoutTypes.put("host", 8);
+            layoutTypes.put("leveler", 9);
+            layoutTypes.put("vanguard", 10);
+            layoutTypes.put("flip", 11);
+            layoutTypes.put("saga", 12);
+            layoutTypes.put("emblem", 13);
+        }
+
+        return layoutTypes;
     }
 
     public static HashMap<String, Integer> GenerateSetTypes()

@@ -8,6 +8,8 @@ public class Constants
     public static int NUM_COLOUR_COMBINATIONS = 32;
     public static int NUM_RARITIES = 6;
     public static int NUM_BORDERTYPES = 3;
+    public static int NUM_LAYOUTS = 13;
+    public static int NUM_FRAMES = 5;
     public static int NUM_SETTYPES = 16;
 
     /*

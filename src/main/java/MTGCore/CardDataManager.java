@@ -30,7 +30,9 @@ public class CardDataManager
     private HashMap<String, Integer> colourCombinations;
     private HashMap<String, Integer> colourCombinationsCoded;
     private HashMap<String, Integer> rarities;
-    private HashMap<String, Integer> borderTypes;
+    private HashMap<String, Integer> borderColors;
+    private HashMap<String, Integer> frameTypes;
+    private HashMap<String, Integer> layouts;
     private HashMap<String, Integer> setTypes;
 
     public CardDataManager()
@@ -48,7 +50,9 @@ public class CardDataManager
         colourCombinations = AutoGenerate.GenerateColourCombinationMap();
         colourCombinationsCoded = AutoGenerate.GenerateColourCombinationCodedMap();
         rarities = AutoGenerate.GenerateRarities();
-        borderTypes = AutoGenerate.GenerateBorderTypes();
+        borderColors = AutoGenerate.GenerateBorderTypes();
+        frameTypes = AutoGenerate.GenerateFrameTypes();
+        layouts = AutoGenerate.GenerateLayouts();
         setTypes = AutoGenerate.GenerateSetTypes();
     }
 
@@ -205,7 +209,9 @@ public class CardDataManager
     public boolean doesColourComboExist(String colours) { return colourCombinations.containsKey(colours); }
     public boolean doesColourComboCodedExist(String colours) { return colourCombinationsCoded.containsKey(colours); }
     public boolean doesRarityExist(String rarity) { return rarities.containsKey(rarity); }
-    public boolean doesBorderExist(String type) { return borderTypes.containsKey(type); }
+    public boolean doesBorderExist(String type) { return borderColors.containsKey(type); }
+    public boolean doesFrameExist(String type) { return frameTypes.containsKey(type); }
+    public boolean doesLayoutExist(String type) { return layouts.containsKey(type); }
 
     public CardSet getCardSet(String setCode) { return setMap.getOrDefault(setCode, null); }
     public int getCardSetSize() { return setMap.size(); }
@@ -264,10 +270,20 @@ public class CardDataManager
     public ArrayList<Integer> getAllRartityIDs() { return new ArrayList<>(rarities.values()); }
     public HashMap<String, Integer> getRarityMap() { return rarities; }
 
-    public int getBorderTypeID(String border) { return borderTypes.getOrDefault(border, -1); }
-    public ArrayList<String> getAllBorderTypes() { return new ArrayList<>(borderTypes.keySet()); }
-    public ArrayList<Integer> getAllBorderTypeIDs() { return new ArrayList<>(borderTypes.values()); }
-    public HashMap<String, Integer> getBorderTypeMap() { return borderTypes; }
+    public int getBorderTypeID(String border) { return borderColors.getOrDefault(border, -1); }
+    public ArrayList<String> getAllBorderTypes() { return new ArrayList<>(borderColors.keySet()); }
+    public ArrayList<Integer> getAllBorderTypeIDs() { return new ArrayList<>(borderColors.values()); }
+    public HashMap<String, Integer> getBorderTypeMap() { return borderColors; }
+
+    public int getFrameTypeID(String border) { return frameTypes.getOrDefault(border, -1); }
+    public ArrayList<String> getAllFrameTypes() { return new ArrayList<>(frameTypes.keySet()); }
+    public ArrayList<Integer> getAllFrameTypeIDs() { return new ArrayList<>(frameTypes.values()); }
+    public HashMap<String, Integer> getFrameTypeMap() { return frameTypes; }
+
+    public int getLayoutID(String layout) { return layouts.getOrDefault(layouts, -1); }
+    public ArrayList<String> getAllLayouts() { return new ArrayList<>(layouts.keySet()); }
+    public ArrayList<Integer> getAllLayoutss() { return new ArrayList<>(layouts.values()); }
+    public HashMap<String, Integer> getLayoutsMap() { return layouts; }
 
     public int getSetTypeID(String setType) { return setTypes.getOrDefault(setType, -1); }
     public ArrayList<String> getAllSetTypes() { return new ArrayList<>(setTypes.keySet()); }
